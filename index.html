@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form action="">
+    <form novalidate>
       <div>
         <label for="user-email">Email: </label>
         <input
@@ -16,13 +16,14 @@
           id="user-email"
           name="user-email"
           placeholder="you@example.com"
+          required
         />
         <span class="error"></span>
       </div>
 
       <div>
         <label for="country">Country: </label>
-        <input type="text" id="country" name="country" />
+        <input type="text" id="country" name="country" required/>
         <span class="error"></span>
       </div>
       <div>
@@ -33,12 +34,13 @@
           name="zip"
           pattern="[0-9]{5}"
           placeholder="00000"
+          required
         />
         <span class="error"></span>
       </div>
       <div>
         <label for="password">Password: </label>
-        <input type="password" id="password" name="password" />
+        <input type="password" id="password" name="password" required/>
       </div>
       <div>
         <label for="password-confirmation">Confirmation: </label>
@@ -46,10 +48,12 @@
           type="password"
           id="password-confirmation"
           name="password-confirmation"
+          pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+          required
         />
       </div>
       <div>
-        <button id="submit-button">Submit</button>
+        <input type="submit" id="submit-button"></input>
         <span class="error"></span>
       </div>
     </form>
